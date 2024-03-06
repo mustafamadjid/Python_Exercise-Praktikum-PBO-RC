@@ -6,3 +6,7 @@ Resolusi Saya di Tahun ini :
 2. Membuat project kecil android
 3. IP diatas 3.3
 4. Jadi lebih shaleh
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4130417ff8bd1d1e062fe37532c9c821270151b0

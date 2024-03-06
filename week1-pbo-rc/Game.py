@@ -1,10 +1,3 @@
-
-"""
-1.  Ultimate Skill Wil increase the fighter's power
-2. Armor will reduce the attack effect by enemy
-3. Counter attack
-"""
-
 class greekFight:
     def __init__(self,fighter_name, health, attack_power,armor):
         self.name = fighter_name
@@ -44,10 +37,13 @@ fighter_list = []
 zeus = greekFight("ZEUS",1000,500,10)
 ares = greekFight("ARES",500,250,5)
 kratos = greekFight("KRATOS",760,320,6 )
+poseidon = greekFight("POSEIDON",550,277,8)
 
 fighter_list.append(zeus)
 fighter_list.append(ares)
 fighter_list.append(kratos)
+fighter_list.append(poseidon)
+
 
 print("=== FIGHTER LIST ===")
 print()
@@ -66,8 +62,9 @@ for fighter in fighter_list:
         chosen_fighter = fighter
     if fighter.name.lower() == choose_enemy.lower():
         chosen_enemy = fighter 
-
 print()
+
+
 if chosen_fighter and chosen_enemy:
     print(f"You chose {chosen_fighter.name} as your fighter")
     print(f"You chose {chosen_enemy.name} as your enemy")
