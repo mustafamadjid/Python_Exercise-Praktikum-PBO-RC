@@ -47,7 +47,7 @@ class Child(Father, Mother):
                 print(f"Child's Blood Type   : {child_blood}")
 
             
-c = Child()
-c.child_blood_type()
+child = Child()
+child.child_blood_type()
 
 
