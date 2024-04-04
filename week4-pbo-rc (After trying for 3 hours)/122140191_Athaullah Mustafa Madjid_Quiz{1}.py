@@ -18,9 +18,9 @@ class HangmanGame:
     def player_guess (self):
         while True:
             try:
-                option = input("Guess a leter : ")
-                if not isinstance(option,str):
-                    raise TypeError("Inpust must be a string")
+                option = input("Guess a leter : ").lower()
+                if not isinstance(option,str) or len(option) != 1:
+                    raise TypeError("Input must be a string or only one character")
                 else:
                     break
             except TypeError as e:
