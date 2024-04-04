@@ -103,8 +103,6 @@ class HangmanGame:
         
         fill_blank = ['_'] * len(pick_word)
         
-        print(pick_word)
-        
         while self.stages < 6 and "_" in fill_blank:
              print("The word is : ", " ".join(fill_blank))
              word_guess = self.player_guess()
@@ -122,12 +120,13 @@ class HangmanGame:
              else:
                  self.attempt -= 1
                  self.stages += 1
+                 print("Incorrect. You have {} attempts left ! ".format(self.attempt))
                  print(self.player_stages())
         
         if self.stages == 6 :
             print("Unfortunately the answer is : ",pick_word)
         else:
-            print("Congratulations, you guess the right word")
+            print("Congratulations, you guess the right word : ",pick_word)
              
              
     def main(self):
