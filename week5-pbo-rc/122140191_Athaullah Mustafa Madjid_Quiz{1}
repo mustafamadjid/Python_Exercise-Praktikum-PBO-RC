@@ -1,0 +1,143 @@
+#HANGMAN GAME
+
+import random
+
+class HangmanGame:
+    def __init__(self):
+        self.words = [
+             'algorithm', 'binary', 'boolean', 'byte', 'cache', 'compiler', 'debugger',
+             'encryption', 'framework', 'function', 'garbage', 'hash', 'index', 'iterator',
+             'javascript', 'json', 'library', 'loop', 'namespace', 'object', 'operator',
+             'overload', 'polymorphism', 'queue', 'recursion', 'serialization', 'stack',
+             'template', 'variable', 'virtual', 'web', 'xml', 'yaml', 'zip'
+        ]
+
+        self.stages = 0
+        self.attempt = 6
+        
+    def player_guess (self):
+        while True:
+            try:
+                option = input("Guess a leter : ")
+                if not isinstance(option,str):
+                    raise TypeError("Inpust must be a string")
+                else:
+                    break
+            except TypeError as e:
+                print("ERROR", e)
+        
+        return option
+    
+    def player_stages(self):
+        stages = ["""
+            ------
+            |    |
+            |
+            |
+            |
+            |
+            |
+        ------------
+        """, """
+            ------
+            |    |
+            |    O
+            |
+            |
+            |
+            |
+        ------------
+        """, """
+            ------
+            |    |
+            |    O
+            |    |
+            |    |
+            |
+            |
+        ------------
+        """, """
+            ------
+            |    |
+            |    O
+            |    |
+            |    |
+            |   /
+            |
+        ------------
+        """, """
+            ------
+            |    |
+            |    O
+            |    |
+            |    |
+            |   / \\
+            |
+        ------------
+        """, """
+            ------
+            |    |
+            |    O
+            |  --|
+            |    |
+            |   / \\
+            |
+        ------------
+        """, """
+            ------
+            |    |
+            |    O
+            |  --|--
+            |    |
+            |   / \\
+            |
+        ------------
+        """]
+        
+        return stages[self.stages]
+     
+    
+    
+    def play(self):
+        pick_word = random.choice(self.words)
+        
+        fill_blank = []
+        for i in range(len(pick_word)):
+            fill_blank.append("_")
+        
+        
+        for i in range(0,6):
+            print("The word is : ",fill_blank)
+            word_guess = self.player_guess()
+            
+            for word in range(len(pick_word)):
+                if pick_word[i] == word_guess:
+                    fill_blank[i] = word_guess
+                    print("Correct!")
+                    print(self.player_stages())
+                else:
+                    self.stages += 1
+                    self.attempt -= 1
+                    print(f"Incorrrect. You Have {self.attempt} attempts left")
+                    print(self.player_stages())
+
+                if self.stages == 6:
+                    print("You Failed")
+                    print(self.player_stages())
+    def main(self):
+        
+    
+    
+
+if __name__ = '__main__':
+    game = HangmanGame()
+    game.main()
+            
+                    
+                    
+            
+            
+            
+            
+                
+            
