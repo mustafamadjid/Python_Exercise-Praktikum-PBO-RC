@@ -1,4 +1,4 @@
-# This is my Python OOP practicum assignment
+# This is my Python OOP practicum assignment repository
 
 
 <img src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/community/logos/python-logo-only.png">
